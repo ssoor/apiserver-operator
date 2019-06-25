@@ -27,6 +27,7 @@ require (
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.9.1 // indirect
 	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2 // indirect
+	k8s.io/api v0.0.0-20190313235455-40a48860b5ab
 	k8s.io/apimachinery v0.0.0-20190313205120-d7deff9243b1
 	k8s.io/client-go v2.0.0-alpha.0.0.20190313235726-6ee68ca5fd83+incompatible
 	k8s.io/kube-openapi v0.0.0-20190603182131-db7b694dc208 // indirect
