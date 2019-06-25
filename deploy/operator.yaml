@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiserver-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: apiserver-operator
+  template:
+    metadata:
+      labels:
+        name: apiserver-operator
+    spec:
+      serviceAccountName: apiserver-operator
+      containers:
+        - name: apiserver-operator
+          # Replace this with the built image name
+          image: REPLACE_IMAGE
+          command:
+          - apiserver-operator
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "apiserver-operator"
